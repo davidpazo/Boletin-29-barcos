@@ -37,6 +37,10 @@ public class ArrayBarcos {
     public void añadirYate(ArrayList<Barcos> listaB) {
         listaB.add(new Yates(this.pedirMatricula(),this.pedirEslora(),this.pedirDia(),this.pedirPotencia(),this.pedirCamarote()));
     }
+    public void añadirCarguero(ArrayList<Barcos> listaB){
+        listaB.add(new Yates(this.pedirMatricula(),this.pedirEslora(),this.pedirDia(),this.pedirPotencia(),this.pedirCamarote()));
+
+    }
 
     public void amosar(Barcos b) {
         if (b instanceof Yates) {
@@ -47,8 +51,9 @@ public class ArrayBarcos {
         }
         if (b instanceof Veleros) {
             JOptionPane.showMessageDialog(null, "Barco Velero: \nMatricula: " + b.getMatricula()+"\nEslora: "+b.getEslora()+"\nNumero dias: "+b.getNdias()+((Veleros)b).getMastiles());
-
-            //for(int i=0; i<listaB.size();i++){
+        if (b instanceof Bcarga) {
+            JOptionPane.showMessageDialog(null,"Barco de carga: \nMatricula: "+ b.getMatricula()+"\nEslora: "+b.getEslora()+"nNumero dias: "+b.getNdias()+((Bcarga)b).getCarga());
+        }
         }
     }
 

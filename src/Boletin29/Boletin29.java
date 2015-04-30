@@ -16,9 +16,10 @@ public class Boletin29 {
         do {
             opc = JOptionPane.showOptionDialog(
                     null, "MENU", "Que barco desea alugar?", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
-                        "Añadir Velero",
-                        "Añadir Deportivo",
-                        "Añadir Yates",
+                        "Velero",
+                        "Deportivo",
+                        "Yates",
+                        "Carguero",
                         "Mostrar lista de barcos",
                         "Salir"},
                     "Exit") + 1;
@@ -34,14 +35,15 @@ public class Boletin29 {
                     obj.añadirYate(listaB);
                     break;
                 case 4:
+                    obj.añadirCarguero(listaB);
+                case 5:
                     for (Barcos bar : listaB) {
                         obj.amosar(bar);
                     }
                     break;
-
-                case 5:
+                case 6:
                     System.exit(0);
             }
-        } while (opc != 0 && opc != 5);
+        } while (opc != 0 && opc != 6);
     }
 }
